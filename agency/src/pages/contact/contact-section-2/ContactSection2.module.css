@@ -1,0 +1,138 @@
+.wrapper {
+  background: #0a0a0a;
+  padding: 80px 40px;
+  display: flex;
+  justify-content: center;
+}
+
+.container {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 0.8fr 1.2fr;
+  gap: 24px;
+}
+
+.infoCard, .formCard {
+  background: #141414;
+  border: 1px solid #1f1f1f;
+  border-radius: 20px;
+  padding: 40px;
+}
+
+
+
+.tabsContainer {
+  display: flex;
+  background: #0f0f0f;
+  border: 1px solid #1f1f1f;
+  border-radius: 10px;
+  padding: 6px;
+  margin-bottom: 50px;
+}
+
+.tabBtn {
+  flex: 1;
+  background: transparent;
+  border: none;
+  color: #666;
+  padding: 12px;
+  font-size: 11px;
+  font-weight: 600;
+  cursor: pointer;
+  border-radius: 8px;
+}
+
+.activeTab {
+  background: #c9795e;
+  color: #000;
+}
+
+
+
+.methodGroup { margin-bottom: 30px; }
+.methodLabel { color: #555; font-size: 13px; display: block; margin-bottom: 12px; }
+.methodInputLike {
+  background: #1a1a1a;
+  border: 1px solid #262626;
+  padding: 22px;
+  border-radius: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.methodValue { color: #fff; font-weight: 500; font-size: 15px; }
+.arrowIcon {
+  width: 38px;
+  height: 38px;
+  border: 1px solid #333;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #888;
+}
+
+
+
+.formGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 25px;
+  margin-bottom: 25px;
+}
+.inputWrap label {
+  display: block;
+  color: #fff;
+  font-size: 12px;
+  margin-bottom: 10px;
+  letter-spacing: 0.5px;
+}
+.inputWrap input, .inputWrap textarea {
+  width: 100%;
+  background: #1a1a1a;
+  border: 1px solid #262626;
+  padding: 18px;
+  border-radius: 10px;
+  color: #fff;
+  font-size: 14px;
+}
+.inputWrap textarea { height: 160px; resize: none; }
+
+.phoneInput {
+  display: flex;
+  background: #1a1a1a;
+  border: 1px solid #262626;
+  border-radius: 10px;
+}
+.flagSelector {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0 15px;
+  border-right: 1px solid #262626;
+}
+.flagSelector img { width: 25px; border-radius: 2px; }
+.chevron { color: #666; font-size: 10px; }
+
+.formFooter {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 30px;
+}
+.checkboxLabel { color: #888; font-size: 13px; display: flex; align-items: center; gap: 10px; cursor: pointer; }
+.submitBtn {
+  background: #c9795e;
+  border: none;
+  padding: 18px 30px;
+  border-radius: 10px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+}
+
+@media (max-width: 1024px) {
+  .container { grid-template-columns: 1fr; }
+}

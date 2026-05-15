@@ -1,0 +1,162 @@
+.wrapper {
+  padding: 40px 20px;
+  background: #0a0a0a;
+}
+
+.headerCard {
+  background: #141414;
+  border: 1px solid #1f1f1f;
+  border-radius: 15px;
+  padding: 45px 50px;
+  margin-bottom: 25px;
+}
+
+.title {
+  color: #fff;
+  font-size: 34px;
+  font-weight: 500;
+  margin: 0;
+}
+
+.jobsGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.jobCard {
+  background: #141414;
+  border: 1px solid #1f1f1f;
+  border-radius: 20px;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.cardTop {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.titleRow {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.iconBox {
+  width: 50px;
+  height: 50px;
+  background: #1a1a1a;
+  border: 1px solid #262626;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.iconBox img {
+  width: 24px;
+  height: 24px;
+  filter: sepia(1) saturate(3) hue-rotate(330deg) brightness(0.8);
+}
+
+.jobTitle {
+  color: #fff;
+  font-size: 20px;
+  margin: 0;
+  font-weight: 500;
+}
+
+.viewBtn {
+  background: transparent;
+  border: none;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #888;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.arrowCircle {
+  width: 40px;
+  height: 40px;
+  border: 1px solid #262626;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #c9795e;
+}
+
+.badgesRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.badge {
+  background: #1a1a1a;
+  border: 1px solid #262626;
+  padding: 8px 16px;
+  border-radius: 50px;
+  font-size: 13px;
+  color: #888;
+}
+
+.skillsLabel {
+  color: #fff;
+  font-size: 15px;
+  margin: 0 0 10px 0;
+}
+
+.skillsText {
+  color: #777;
+  font-size: 14px;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.applyBtn {
+  background: #c9795e;
+  border: none;
+  border-radius: 10px;
+  padding: 18px;
+  color: #000;
+  font-weight: 600;
+  font-size: 15px;
+  cursor: pointer;
+  transition: opacity 0.2s;
+  margin-top: auto;
+}
+
+.applyBtn:hover {
+  opacity: 0.9;
+}
+
+
+
+
+@media (max-width: 1100px) {
+  .jobsGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 650px) {
+  .jobCard {
+    padding: 30px 20px;
+  }
+  .cardTop {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+  }
+  .viewBtn {
+    width: 100%;
+    justify-content: space-between;
+  }
+}

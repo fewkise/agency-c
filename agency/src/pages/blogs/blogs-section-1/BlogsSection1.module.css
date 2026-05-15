@@ -1,0 +1,265 @@
+.wrapper {
+  padding: 40px;
+  background: #0a0a0a;
+}
+
+.headerCard {
+  background: #141414;
+  border: 1px solid #1f1f1f;
+  border-radius: 15px;
+  padding: 30px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.title {
+  color: #fff;
+  font-size: 32px;
+  margin: 0;
+  font-weight: 500;
+}
+
+.tabs {
+  display: flex;
+  background: #0f0f0f;
+  padding: 6px;
+  border-radius: 12px;
+  border: 1px solid #1f1f1f;
+}
+
+.tabBtn {
+  background: transparent;
+  border: none;
+  color: #666;
+  padding: 10px 24px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.tabBtn.active {
+  background: #c9795e;
+  color: #000;
+}
+
+.featuredLink, .cardLink {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.cardLink:hover {
+  transform: translateY(-5px);
+}
+
+.featuredBox {
+  display: grid;
+  grid-template-columns: 0.85fr 1.15fr;
+  gap: 40px;
+  background: #141414;
+  border: 1px solid #1f1f1f;
+  border-radius: 20px;
+  padding: 30px;
+  margin-bottom: 30px;
+  align-items: center;
+}
+
+.mainImgWrapper img {
+  width: 100%;
+  height: 340px;
+  border-radius: 15px;
+  object-fit: cover;
+  display: block;
+  background: #1a1a1a;
+}
+
+.mainContent {
+  display: flex;
+  flex-direction: column;
+}
+
+.mainTitle {
+  color: #fff;
+  font-size: 26px;
+  margin-bottom: 20px;
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+
+.metaRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 25px;
+}
+
+.metaItem {
+  color: #888;
+  font-size: 12px;
+  background: #1a1a1a;
+  padding: 7px 15px;
+  border-radius: 50px;
+  border: 1px solid #262626;
+  white-space: nowrap;
+}
+
+.metaItem b {
+  color: #ccc;
+  font-weight: 500;
+}
+
+.mainDesc {
+  color: #888;
+  line-height: 1.6;
+  font-size: 15px;
+  margin-bottom: 30px;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.mainFooter {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid #1f1f1f;
+  padding-top: 25px;
+}
+
+.pubDate {
+  color: #666;
+  font-size: 13px;
+}
+
+.pubDate b {
+  color: #fff;
+}
+
+.blogsGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.smallCard {
+  background: #141414;
+  border: 1px solid #1f1f1f;
+  border-radius: 20px;
+  padding: 25px;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.cardImg {
+  width: 100%;
+  height: 220px;
+  border-radius: 12px;
+  object-fit: cover;
+  margin-bottom: 20px;
+  background: #1a1a1a;
+}
+
+.cardTitle {
+  color: #fff;
+  font-size: 18px;
+  margin-bottom: 15px;
+  line-height: 1.4;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  min-height: 50px;
+}
+
+.cardDesc {
+  color: #777;
+  font-size: 14px;
+  line-height: 1.5;
+  margin-bottom: 25px;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.readBtn {
+  background: transparent;
+  border: none;
+  color: #888;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 13px;
+  font-weight: 500;
+  padding: 0;
+  width: fit-content;
+  transition: color 0.3s ease;
+}
+
+.cardLink:hover .arrowBox, 
+.featuredLink:hover .arrowBox {
+  border-color: #c9795e;
+  background: #c9795e;
+  color: #000;
+}
+
+.cardLink:hover .readBtn,
+.featuredLink:hover .readBtn {
+  color: #fff;
+}
+
+.arrowBox {
+  width: 38px;
+  height: 38px;
+  border: 1px solid #262626;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #c9795e;
+  font-size: 18px;
+  transition: all 0.3s ease;
+}
+
+@media (max-width: 1200px) {
+  .featuredBox {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+  .mainImgWrapper img {
+    height: 300px;
+  }
+  .blogsGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .wrapper {
+    padding: 20px;
+  }
+  .headerCard {
+    flex-direction: column;
+    gap: 20px;
+    text-align: center;
+    padding: 20px;
+  }
+  .blogsGrid {
+    grid-template-columns: 1fr;
+  }
+  .mainTitle {
+    font-size: 22px;
+  }
+  .mainFooter {
+    flex-direction: column;
+    gap: 20px;
+    align-items: flex-start;
+  }
+}

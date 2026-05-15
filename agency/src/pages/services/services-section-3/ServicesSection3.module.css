@@ -1,0 +1,23 @@
+.wrapper {
+  padding: 40px 20px;
+  background: #0a0a0a;
+}
+.mainHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px 40px;
+  background: #141414;
+  border-radius: 12px;
+  margin-bottom: 20px;
+}
+.mainHeader h2 { color: #fff; font-weight: 400; }
+.storyRow {
+  display: grid;
+  grid-template-columns: 0.8fr 1.2fr;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+@media (max-width: 1024px) {
+  .storyRow { grid-template-columns: 1fr; }
+}

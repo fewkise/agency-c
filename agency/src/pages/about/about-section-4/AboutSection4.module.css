@@ -1,0 +1,121 @@
+.wrapper {
+  padding: 40px 20px;
+  background: #0a0a0a;
+  margin: 0 auto;
+}
+
+.headerCard {
+  background: #141414;
+  border: 1px solid #1f1f1f;
+  border-radius: 15px;
+  padding: 45px 50px;
+  margin-bottom: 25px;
+}
+
+.title {
+  color: #fff;
+  font-size: 34px;
+  font-weight: 500;
+  margin: 0;
+  text-transform: uppercase;
+}
+
+.awardsGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.awardCard {
+  background: #141414;
+  border: 1px solid #1f1f1f;
+  border-radius: 20px;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.cardHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.dateBox {
+  background: #1a1a1a;
+  border: 1px solid #262626;
+  padding: 8px 16px;
+  border-radius: 50px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+}
+
+.dateLabel { color: #666; }
+.dot { color: #c9795e; }
+.dateValue { color: #ccc; }
+
+.iconCircle {
+  width: 44px;
+  height: 44px;
+  background: #1a1a1a;
+  border: 1px solid #262626;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.iconCircle img {
+  width: 22px;
+  height: 22px;
+  
+
+  filter: sepia(1) saturate(5) hue-rotate(330deg);
+}
+
+.awardTitle {
+  color: #fff;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.4;
+  margin: 0 0 15px 0;
+  text-transform: uppercase;
+}
+
+.awardDesc {
+  color: #888;
+  font-size: 14px;
+  line-height: 1.6;
+  margin: 0;
+}
+
+
+
+
+@media (max-width: 1200px) {
+  .awardsGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 650px) {
+  .awardsGrid {
+    grid-template-columns: 1fr;
+  }
+  
+  .headerCard {
+    padding: 30px;
+    text-align: center;
+  }
+  
+  .title {
+    font-size: 24px;
+  }
+
+  .awardCard {
+    padding: 25px;
+  }
+}

@@ -1,0 +1,38 @@
+.infoWrapper {
+  background: #141414;
+  border: 1px solid #1f1f1f;
+  border-radius: 12px;
+  padding: 40px;
+}
+.tabsHeader {
+  display: flex;
+  gap: 10px;
+  background: #0a0a0a;
+  padding: 6px;
+  border-radius: 8px;
+  width: fit-content;
+  margin-bottom: 30px;
+}
+.tabBtn {
+  background: transparent;
+  border: none;
+  color: #666;
+  padding: 8px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 11px;
+}
+.tabBtn.active {
+  background: #c9795e;
+  color: #000;
+}
+.tabTitle {
+  font-size: 28px;
+  margin-bottom: 20px;
+  color: #fff;
+}
+.tabDescription {
+  color: #999;
+  line-height: 1.6;
+  font-size: 14px;
+}

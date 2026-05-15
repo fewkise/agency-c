@@ -1,0 +1,42 @@
+.card {
+  background: #141414;
+  border: 1px solid #1f1f1f;
+  padding: 40px;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.iconWrapper {
+  width: 48px;
+  height: 48px;
+  background: #1a1a1a;
+  border: 1px solid #262626;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+
+.iconWrapper img {
+  width: 20px;
+  height: 20px;
+  filter: brightness(0) saturate(100%) invert(59%) sepia(16%) saturate(1178%) hue-rotate(331deg) brightness(91%) contrast(87%);
+}
+
+.title {
+  color: #fff;
+  font-size: 18px;
+  font-weight: 500;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+}
+
+.description {
+  color: #888;
+  font-size: 14px;
+  line-height: 1.6;
+  margin: 0;
+}

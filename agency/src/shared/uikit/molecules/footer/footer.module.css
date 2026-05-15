@@ -1,0 +1,152 @@
+.footer {
+  padding: 40px;
+  background: #0a0a0a;
+  color: white;
+  font-family: 'Roboto Flex', sans-serif;
+}
+
+.ctaCard {
+  background: #d8866b;
+  border-radius: 20px;
+  padding: 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.ctaText h2 { font-size: 36px; font-weight: 700; color: #000; margin: 0 0 10px 0; }
+.ctaText p { color: #222; font-size: 14px; max-width: 700px; }
+.ctaBtn { background: #111; color: white; text-decoration: none; padding: 16px 24px; border-radius: 12px; font-weight: 600; font-size: 14px; }
+
+.ticker {
+  background: #111;
+  padding: 15px;
+  border-radius: 12px;
+  margin-bottom: 20px;
+  color: #444;
+  font-size: 11px;
+  text-align: center;
+}
+
+.mainGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.socialGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 20px;
+}
+
+.socialCard {
+  background: #141414;
+  border: 1px solid #1f1f1f;
+  border-radius: 20px;
+  padding: 30px;
+  text-decoration: none;
+  color: inherit;
+  transition: 0.3s;
+}
+
+.cardHeader {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 40px;
+}
+
+.iconBox {
+  width: 44px;
+  height: 44px;
+  background: #1a1a1a;
+  border: 1px solid #262626;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.arrowCircle {
+  width: 36px;
+  height: 36px;
+  border: 1px solid #262626;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #444;
+}
+
+.cardBody h4 { font-size: 15px; margin: 0 0 10px 0; font-weight: 600; }
+.cardBody p { color: #666; font-size: 12px; line-height: 1.5; margin: 0; }
+
+.navigationAndNewsletter {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.linksContainer {
+  background: #141414;
+  border: 1px solid #1f1f1f;
+  border-radius: 20px;
+  padding: 40px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.linkColumn { display: flex; flex-direction: column; }
+.linkColumn h5 { color: #fff; font-size: 16px; margin: 0 0 20px 0; font-weight: 500; }
+.linkColumn a { color: #666; text-decoration: none; font-size: 13px; margin-bottom: 12px; transition: 0.2s; }
+.linkColumn a:hover { color: #fff; }
+
+.badge { background: #222; padding: 2px 8px; border-radius: 6px; font-size: 10px; margin-left: 5px; color: #444; }
+
+.newsletterCard {
+  background: #141414;
+  border: 1px solid #1f1f1f;
+  border-radius: 20px;
+  padding: 40px;
+}
+
+.newsFlex { display: flex; align-items: center; justify-content: space-between; margin-top: 15px; }
+.newsFlex h3 { font-size: 20px; margin: 0; flex: 1; }
+.inputGroup { display: flex; align-items: center; border-bottom: 1px solid #262626; padding-bottom: 10px; flex: 1; margin-left: 40px; }
+.inputGroup input { background: transparent; border: none; color: white; flex: 1; outline: none; }
+.sendBtn { background: #1a1a1a; border: 1px solid #262626; color: white; width: 40px; height: 40px; border-radius: 50%; cursor: pointer; }
+
+.footerBottom {
+  background: #141414;
+  border: 1px solid #1f1f1f;
+  border-radius: 20px;
+  padding: 25px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #444;
+  font-size: 13px;
+}
+
+.legalLinks a { color: #444; text-decoration: none; margin-left: 20px; }
+
+@media (max-width: 1024px) {
+  .mainGrid { grid-template-columns: 1fr; }
+  .socialGrid { grid-template-columns: repeat(4, 1fr); grid-template-rows: auto; }
+  .socialCard { padding: 15px; }
+  .cardBody, .arrowCircle { display: none; }
+  .cardHeader { margin: 0; justify-content: center; }
+  .iconBox { width: 100%; height: 50px; }
+  
+  .newsFlex { flex-direction: column; align-items: flex-start; gap: 20px; }
+  .inputGroup { margin: 0; width: 100%; }
+  .linksContainer { grid-template-columns: 1fr 1fr; gap: 30px; }
+  .footerBottom { flex-direction: column; gap: 20px; text-align: center; }
+  .legalLinks a { margin: 0 10px; }
+}
+
+@media (max-width: 600px) {
+  .socialGrid { grid-template-columns: 1fr 1fr; }
+}

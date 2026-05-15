@@ -1,0 +1,70 @@
+.infoBox {
+  background: #141414;
+  border: 1px solid #1f1f1f;
+  border-radius: 12px;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.infoTop {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.titleWithIcon {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.iconWrapper {
+  width: 48px;
+  height: 48px;
+  background: #1a1a1a;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #262626;
+}
+
+.iconWrapper img {
+  width: 24px;
+  height: 24px;
+}
+
+.titleWithIcon h3 {
+  font-size: 20px;
+  margin: 0;
+  color: #fff;
+}
+
+.bookBtn {
+  background: transparent;
+  border: none;
+  color: #888;
+  font-size: 13px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+.serviceDesc {
+  color: #999;
+  font-size: 14px;
+  line-height: 1.6;
+  margin: 0;
+  flex-grow: 1;
+}
+
+.priceTag {
+  margin-top: 30px;
+  font-size: 24px;
+  font-weight: 600;
+  color: #fff;
+  align-self: flex-end;
+}
