@@ -40,6 +40,9 @@
   align-items: center;
   justify-content: center;
   color: #fff;
+  img {
+    scale: 70%;
+  }
 }
 
 .imageGrid {

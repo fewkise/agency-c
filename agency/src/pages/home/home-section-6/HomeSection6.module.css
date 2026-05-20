@@ -42,6 +42,9 @@
   align-items: center;
   justify-content: center;
   color: #e58d71;
+  img {
+    scale:70%;
+  }
 }
 
 .contentGrid {
@@ -158,4 +161,12 @@
 
 @media (max-width: 1024px) {
   .contentGrid { grid-template-columns: 1fr; }
+  .viewAll {
+    display: none;
+  }
+}
+@media (max-width: 500px) {
+  .container {
+    padding: 0;
+  }
 }

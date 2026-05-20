@@ -47,6 +47,9 @@
   align-items: center;
   justify-content: center;
   color: #e58d71;
+  img {
+    scale: 70%;
+  }
 }
 
 .grid {
@@ -135,6 +138,9 @@
   color: #888;
   cursor: pointer;
   transition: 0.3s;
+  img {
+    scale: 70%;
+  }
 }
 
 .card:hover .circleBtn {
@@ -150,4 +156,9 @@
   .grid { grid-template-columns: 1fr; }
   .wrapper { padding: 20px; }
   .container { padding: 20px; }
+}
+@media (max-width: 600px) {
+  .allBtn{
+    display: none;
+  }
 }

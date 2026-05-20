@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import styles from './AboutSection1.module.css';
-
+import arrow_icon from '../../../shared/icons/arrow_icon.png'
 export const AboutSection1 = ({ heroId }) => {
   const [heroData, setHeroData] = useState(null);
   const [stats, setStats] = useState([]);
@@ -28,7 +28,7 @@ export const AboutSection1 = ({ heroId }) => {
               <span className={styles.subTitle}>{heroData?.title_sub}</span>
             </h1>
             <Link to="/contact" className={styles.startBtn}>
-              <div className={styles.arrowCircle}>→</div>
+              <div className={styles.arrowCircle}><img src={arrow_icon} alt="" /></div>
               <span>START A PROJECT</span>
             </Link>
           </div>

@@ -41,6 +41,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-shrink: 0;
 }
 
 .metaColumn {
@@ -59,7 +60,11 @@
   align-items: center;
 }
 
-.metaItem span { color: #555; font-size: 12px; text-transform: uppercase; }
+.metaItem span { 
+  color: #555; 
+  font-size: 12px; 
+  text-transform: uppercase; 
+}
 
 .mainImageContainer {
   width: 100%;
@@ -74,12 +79,9 @@
   border-radius: 20px;
 }
 
-
-
 .contentGrid {
   display: grid;
   grid-template-columns: 80px 1fr 360px; 
-
   gap: 60px;
   max-width: 1400px;
   margin: 0 auto;
@@ -115,7 +117,6 @@
   font-size: 16px;
   line-height: 1.8;
   white-space: pre-line; 
-
 }
 
 .authorBox {
@@ -133,7 +134,11 @@
   margin-bottom: 20px;
 }
 
-.authorInfo img { width: 50px; height: 50px; border-radius: 50%; }
+.authorInfo img { 
+  width: 50px; 
+  height: 50px; 
+  border-radius: 50%; 
+}
 
 .twitterBtn {
   background: #1a1a1a;
@@ -161,15 +166,114 @@
   color: #555;
 }
 
-.statLine span { color: #fff; }
-
-
+.statLine span { 
+  color: #fff; 
+}
 
 @media (max-width: 1100px) {
-  .contentGrid {
+  .heroSection {
     grid-template-columns: 1fr;
   }
-  .leftSidebar { flex-direction: row; justify-content: center; }
-  .rightSidebar { order: -1; } 
+  .contentGrid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  .leftSidebar { 
+    flex-direction: row; 
+    justify-content: center; 
+  }
+  .rightSidebar { 
+    order: -1; 
+  } 
+}
 
+@media (max-width: 768px) {
+  .pageWrapper {
+    padding: 20px;
+  }
+  .titleCard {
+    padding: 40px 30px;
+  }
+  .titleCard h1 {
+    font-size: 32px;
+    margin-bottom: 30px;
+  }
+  .mainImageContainer {
+    height: 350px;
+    margin-bottom: 30px;
+  }
+  .contentTitle {
+    font-size: 22px;
+  }
+}
+
+@media (max-width: 480px) {
+  .metaItem {
+    padding: 15px;
+  }
+  .mainImageContainer {
+    height: 250px;
+  }
+}
+
+@media (max-width: 360px) {
+  .pageWrapper {
+    padding: 15px 10px;
+  }
+  .titleCard {
+    padding: 24px 16px;
+    border-radius: 16px;
+  }
+  .titleCard h1 {
+    font-size: 24px;
+    margin-bottom: 24px;
+  }
+  .startProject {
+    width: 100%;
+    background: #1a1a1a;
+    border: 1px solid #262626;
+    padding: 8px 12px;
+    border-radius: 30px;
+    justify-content: center;
+  }
+  .metaItem {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+    padding: 12px 16px;
+  }
+  .mainImageContainer {
+    height: 200px;
+    margin-bottom: 24px;
+  }
+  .mainImageContainer img {
+    border-radius: 16px;
+  }
+  .contentTitle {
+    font-size: 18px;
+    margin-bottom: 20px;
+  }
+  .fullText {
+    font-size: 14px;
+    line-height: 1.7;
+  }
+  .authorBox {
+    padding: 20px 16px;
+    border-radius: 16px;
+  }
+  .authorInfo {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 10px;
+  }
+  .statsBox {
+    border-radius: 16px;
+  }
+  .statLine {
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    text-align: center;
+  }
 }

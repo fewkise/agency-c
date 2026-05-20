@@ -35,7 +35,7 @@
 .startBtn {
   display: inline-flex;
   align-items: center;
-  gap: 12px;
+  gap: 20px;
   margin-top: 40px;
   text-decoration: none;
   color: #c9795e;
@@ -43,15 +43,13 @@
 }
 
 .arrowCircle {
-  width: 48px;
-  height: 48px;
-  border: 1px solid #c9795e;
-  border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 20px;
+  flex-shrink: 0;
 }
+
 
 .rightCard {
   background: #141414;
@@ -86,7 +84,7 @@
 }
 
 .statValue {
-  color: #fff;
+  color: #DA9E8B;
   font-size: 36px;
   font-weight: 600;
   display: block;
@@ -120,9 +118,70 @@
   align-items: center;
   justify-content: center;
   font-size: 16px;
+  flex-shrink: 0;
 }
 
 @media (max-width: 1024px) {
-  .container { grid-template-columns: 1fr; }
-  .leftCard { padding: 40px; }
+  .container { 
+    grid-template-columns: 1fr; 
+  }
+  .leftCard { 
+    padding: 40px; 
+  }
+}
+
+@media (max-width: 600px) {
+  .wrapper {
+    padding: 30px 12px;
+  }
+  .leftCard {
+    padding: 30px 20px;
+  }
+  .titleWrapper h1 {
+    font-size: 32px;
+  }
+  .rightCard {
+    padding: 24px 16px;
+  }
+  .statValue {
+    font-size: 28px;
+  }
+}
+
+@media (max-width: 360px) {
+  .wrapper {
+    padding: 20px 8px;
+  }
+  .leftCard {
+    padding: 20px 16px;
+  }
+  .titleWrapper h1 {
+    font-size: 24px;
+  }
+  .startBtn {
+    margin-top: 24px;
+    width: 100%;
+    padding: 8px 12px;
+    border-radius: 30px;
+    gap: 12px;
+    justify-content: center;
+  }
+  .statsGrid {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+  .statBox {
+    padding: 20px;
+  }
+  .knowMoreWrapper {
+    padding-top: 24px;
+  }
+  .knowMoreBtn {
+    width: 100%;
+    background: #1a1a1a;
+    border: 1px solid #262626;
+    padding: 10px;
+    border-radius: 30px;
+    justify-content: center;
+  }
 }

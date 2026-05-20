@@ -57,12 +57,6 @@
   justify-content: center;
 }
 
-.iconBox img {
-  width: 24px;
-  height: 24px;
-  filter: sepia(1) saturate(3) hue-rotate(330deg) brightness(0.8);
-}
-
 .jobTitle {
   color: #fff;
   font-size: 20px;
@@ -90,6 +84,9 @@
   align-items: center;
   justify-content: center;
   color: #c9795e;
+  img {
+    scale: 70%;
+  }
 }
 
 .badgesRow {

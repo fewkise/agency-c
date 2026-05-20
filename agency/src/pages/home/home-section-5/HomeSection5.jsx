@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import styles from './HomeSection5.module.css';
-
+import commonArrow from '../../../shared/icons/common_arrow.png'
+import rightArrow from '../../../shared/icons/right_arrow.png'
 const API_URL = 'http://localhost:5000/';
 
 export const HomeSection5 = () => {
@@ -19,7 +20,7 @@ export const HomeSection5 = () => {
         <div className={styles.headerBox}>
           <h2>TESTIMONIALS</h2>
           <div className={styles.allBtn}>
-            <div className={styles.arrowSmall}>↗</div>
+            <div className={styles.arrowSmall}><img src={commonArrow} alt="" /></div>
             <span>ALL TESTIMONIALS</span>
           </div>
         </div>
@@ -41,7 +42,7 @@ export const HomeSection5 = () => {
                   </div>
                 </div>
                 <div className={styles.circleBtn}>
-                   <span>→</span>
+                   <span><img src={rightArrow} alt="" /></span>
                 </div>
               </div>
             </div>

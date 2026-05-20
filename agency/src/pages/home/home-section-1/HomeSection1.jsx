@@ -1,6 +1,8 @@
 import { useState, useEffect } from 'react';
 import styles from './HomeSection1.module.css';
-
+import arrowIcon from '../../../shared/icons/arrow_icon.png'
+import bigArrowBtn from '../../../shared/icons/big_arrow_btn.png'
+import commonArrow from '../../../shared/icons/common_arrow.png'
 export const HomeSection1 = () => {
   const [stats, setStats] = useState([]);
   const [project, setProject] = useState(null);
@@ -30,7 +32,7 @@ export const HomeSection1 = () => {
             <div className={styles.titleRow}>
               <h1>DIGITAL SOLUTIONS</h1>
               <div className={styles.startBtn}>
-                <div className={styles.arrowIcon}>↗</div>
+                <div className={styles.arrowIcon}><img src={arrowIcon} alt="" /></div>
                 <span>START A PROJECT</span>
               </div>
             </div>
@@ -44,7 +46,7 @@ export const HomeSection1 = () => {
           
           <div className={styles.marquee}>
             <div className={styles.marqueeInner}>
-              {[...marqueeItems, ...marqueeItems].map((item, i) => (
+              {[...marqueeItems, ...marqueeItems, ...marqueeItems].map((item, i) => (
                 <span key={i} className={styles.marqueeItem}>
                   {item} <span className={styles.dot}>•</span>
                 </span>
@@ -61,7 +63,7 @@ export const HomeSection1 = () => {
                 backgroundColor: '#1a1a1a' 
             }}
           >
-            <div className={styles.projectArrow}>↗</div>
+            <div className={styles.projectArrow}><img src={bigArrowBtn} alt="" /></div>
           </div>
           <div className={styles.projectInfo}>
             <h3>{project?.title || '...'}</h3>
@@ -78,7 +80,7 @@ export const HomeSection1 = () => {
           </div>
         ))}
         <div className={styles.knowMoreBox}>
-          <div className={styles.smallArrowCircle}>↗</div>
+          <div className={styles.smallArrowCircle}><img src={commonArrow} alt="" /></div>
           <span>KNOW MORE</span>
         </div>
       </div>

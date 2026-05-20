@@ -4,6 +4,7 @@
   border-radius: 12px;
   padding: 40px;
 }
+
 .tabsHeader {
   display: flex;
   gap: 10px;
@@ -13,6 +14,7 @@
   width: fit-content;
   margin-bottom: 30px;
 }
+
 .tabBtn {
   background: transparent;
   border: none;
@@ -22,17 +24,62 @@
   cursor: pointer;
   font-size: 11px;
 }
+
 .tabBtn.active {
   background: #c9795e;
   color: #000;
 }
+
 .tabTitle {
   font-size: 28px;
   margin-bottom: 20px;
   color: #fff;
 }
+
 .tabDescription {
   color: #999;
   line-height: 1.6;
   font-size: 14px;
+}
+
+@media (max-width: 600px) {
+  .infoWrapper {
+    padding: 24px;
+  }
+
+  .tabsHeader {
+    width: 100%;
+  }
+
+  .tabBtn {
+    flex: 1;
+    padding: 8px 5px;
+    text-align: center;
+  }
+}
+
+@media (max-width: 360px) {
+  .infoWrapper {
+    padding: 16px;
+  }
+
+  .tabsHeader {
+    gap: 6px;
+    padding: 4px;
+    margin-bottom: 20px;
+  }
+
+  .tabBtn {
+    font-size: 10px;
+  }
+
+  .tabTitle {
+    font-size: 22px;
+    margin-bottom: 12px;
+  }
+
+  .tabDescription {
+    font-size: 13px;
+    line-height: 1.5;
+  }
 }

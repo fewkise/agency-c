@@ -30,6 +30,7 @@
   align-items: center;
   justify-content: center;
   border: 1px solid #262626;
+  flex-shrink: 0;
 }
 
 .iconWrapper img {
@@ -43,14 +44,33 @@
   color: #fff;
 }
 
-.bookBtn {
-  background: transparent;
-  border: none;
-  color: #888;
-  font-size: 13px;
-  cursor: pointer;
+.arrowSmall {
+  width: 34px;
+  height: 34px;
+  border: 1px solid #262626;
+  border-radius: 50%;
   display: flex;
   align-items: center;
+  justify-content: center;
+  color: #e58d71;
+  flex-shrink: 0;
+}
+
+.arrowSmall img {
+  transform: scale(70%);
+}
+
+.bookBtn {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #666;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: 0.3s;
+  background: transparent;
+  border: none;
 }
 
 .serviceDesc {
@@ -67,4 +87,63 @@
   font-weight: 600;
   color: #fff;
   align-self: flex-end;
+}
+
+@media (max-width: 600px) {
+  .infoBox {
+    padding: 24px;
+  }
+
+  .infoTop {
+    margin-bottom: 20px;
+  }
+
+  .priceTag {
+    margin-top: 20px;
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 360px) {
+  .infoBox {
+    padding: 16px;
+  }
+
+  .infoTop {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+    width: 100%;
+  }
+
+  .titleWithIcon {
+    width: 100%;
+  }
+
+  .titleWithIcon h3 {
+    font-size: 18px;
+  }
+
+  .bookBtn {
+    width: 100%;
+    background: #1a1a1a;
+    border: 1px solid #262626;
+    padding: 8px 12px;
+    border-radius: 8px;
+  }
+
+  .serviceDesc {
+    font-size: 13px;
+  }
+
+  .priceTag {
+    font-size: 18px;
+    align-self: flex-start;
+    width: 100%;
+    background: #1a1a1a;
+    border: 1px solid #262626;
+    padding: 12px;
+    border-radius: 8px;
+    text-align: center;
+  }
 }

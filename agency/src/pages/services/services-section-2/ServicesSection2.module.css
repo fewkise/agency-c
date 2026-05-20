@@ -4,7 +4,7 @@
 }
 
 .sectionHeader {
-  padding: 40px;
+  padding: clamp(20px, 4vw, 40px);
   background: #141414;
   border: 1px solid #1f1f1f;
   border-radius: 12px;
@@ -13,9 +13,10 @@
 
 .sectionHeader h2 {
   margin: 0;
-  font-size: 32px;
+  font-size: clamp(24px, 3.5vw, 32px);
   font-weight: 500;
   color: #fff;
+  letter-spacing: -0.5px;
 }
 
 .servicesGrid {
@@ -33,5 +34,37 @@
 @media (max-width: 1024px) {
   .serviceRow {
     grid-template-columns: 1fr;
+    gap: 16px;
+  }
+}
+
+@media (max-width: 600px) {
+  .wrapper {
+    padding: 30px 12px;
+  }
+  
+  .servicesGrid {
+    gap: 16px;
+  }
+
+  .sectionHeader {
+    border-radius: 8px;
+    margin-bottom: 16px;
+  }
+}
+
+
+@media (max-width: 360px) {
+  .wrapper {
+    padding: 20px 8px; 
+  }
+
+  .sectionHeader {
+    padding: 16px; 
+    text-align: center;
+  }
+
+  .serviceRow {
+    gap: 12px; 
   }
 }

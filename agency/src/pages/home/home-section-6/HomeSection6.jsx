@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import styles from './HomeSection6.module.css';
-
+import commonArrow from '../../../shared/icons/common_arrow.png'
 const API_URL = 'http://localhost:5000/';
 
 export const HomeSection6 = () => {
@@ -29,7 +29,7 @@ export const HomeSection6 = () => {
         <div className={styles.headerBox}>
           <h2>FREQUENTLY ASKED QUESTIONS</h2>
           <div className={styles.viewAll}>
-            <div className={styles.arrowSmall}>↗</div>
+            <div className={styles.arrowSmall}><img src={commonArrow} alt="" /></div>
             <span>VIEW ALL</span>
           </div>
         </div>

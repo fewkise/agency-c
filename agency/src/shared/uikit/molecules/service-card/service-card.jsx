@@ -1,5 +1,5 @@
 import styles from './service-card.module.css';
-
+import commonArrow from '../../../icons/common_arrow.png'
 export const ServiceCard = ({ service }) => {
   return (
     <div className={styles.infoBox}>
@@ -11,7 +11,8 @@ export const ServiceCard = ({ service }) => {
           <h3>{service.title}</h3>
         </div>
         <button className={styles.bookBtn}>
-          <span>↗ BOOK A CALL</span>
+          <div className={styles.arrowSmall}><img src={commonArrow} alt="" /></div>
+          <span>BOOK A CALL</span>
         </button>
       </div>
       <p className={styles.serviceDesc}>{service.description}</p>

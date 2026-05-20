@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import styles from './HomeSection3.module.css';
-
+import commonArrow from '../../../shared/icons/common_arrow.png'
 export const HomeSection3 = () => {
   const [services, setServices] = useState([]);
 
@@ -27,8 +27,8 @@ export const HomeSection3 = () => {
                     </div>
                     <h3>{service.title}</h3>
                     <div className={styles.bookCall}>
+                    <div className={styles.arrowSmall}><img src={commonArrow} alt="" /></div>
                     <span>BOOK A CALL</span>
-                    <div className={styles.arrowSmall}>↗</div>
                     </div>
                 </div>
                 

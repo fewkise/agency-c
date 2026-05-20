@@ -67,9 +67,8 @@ body {
 .startBtn {
   display: flex;
   align-items: center;
-  gap: 12px;
-  color: #ff8a65;
-  border: 1px solid #262626;
+  gap: 22px;
+  color: #CE7D63;
   padding: 10px 20px;
   border-radius: 50px;
   cursor: pointer;
@@ -92,29 +91,51 @@ body {
   font-size: 14px;
 }
 
-
-
+/* --- FIX MARQUEE (БЕГУЩАЯ СТРОКА) --- */
 .marquee {
   background: #1a1a1a;
-  padding: 20px;
+  padding: 20px 0;
   border-top: 1px solid #262626;
-  white-space: nowrap;
   overflow: hidden;
+  width: 100%;
+}
+
+.marqueeInner {
+  display: flex;
+  width: max-content;
+  align-items: center;
+  animation: scrollMarquee 25s linear infinite;
 }
 
 .marqueeItem {
   color: #666;
   font-size: 14px;
-  margin-right: 15px;
+  letter-spacing: 1px;
+  white-space: nowrap;
+  display: inline-flex;
+  align-items: center;
+  padding: 0 20px;
 }
 
 .dot {
   color: #ff8a65;
-  margin-left: 15px;
+  margin-left: 40px;
 }
 
+@keyframes scrollMarquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-33.333%);
+  }
+}
 
+.marquee:hover .marqueeInner {
+  animation-play-state: paused;
+}
 
+/* --- RIGHT CARD --- */
 .rightCard {
   background: #151515;
   border-radius: 24px;
@@ -131,22 +152,27 @@ body {
   border-radius: 16px;
   position: relative;
   min-height: 350px;
+  background-size: cover;
+  background-position: center;
 }
 
 .projectArrow {
   position: absolute;
-  top: 15px;
-  right: 15px;
-  width: 70px;
-  height: 70px;
-  background: #ff8a65;
-  border-radius: 50%;
+  top: 0;
+  right: 0;
+  width: 100px;
+  height: 100px;
+  background: #151515;
   display: flex;
+  border-bottom-left-radius: 50%;
   align-items: center;
   justify-content: center;
   color: black;
   font-size: 32px;
   border: 4px solid #151515;
+  img {
+    scale: 80%;
+  }
 }
 
 .projectInfo h3 {
@@ -159,8 +185,7 @@ body {
   font-size: 14px;
 }
 
-
-
+/* --- STATS GRID --- */
 .statsGrid {
   display: grid;
   grid-template-columns: repeat(6, 1fr);
@@ -186,6 +211,7 @@ body {
 .statValue {
   font-size: 32px;
   font-weight: bold;
+  color: #DA9E8B;
 }
 
 .knowMoreBox {
@@ -200,9 +226,9 @@ body {
 }
 
 .smallArrowCircle {
-  width: 32px;
-  height: 32px;
-  background: #ff8a65;
+  width: 54px;
+  height: 54px;
+  background: #0F0F0F;
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -210,6 +236,7 @@ body {
   color: black;
 }
 
+/* --- ADAPTIVE --- */
 @media (max-width: 1100px) {
   .heroGrid { grid-template-columns: 1fr; }
   .statsGrid { grid-template-columns: repeat(3, 1fr); }

@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import styles from './CareersSection2.module.css';
-
+import commonArrow from '../../../shared/icons/common_arrow.png'
 export const CareersSection2 = ({ heroId }) => {
   const [header, setHeader] = useState(null);
   const [jobs, setJobs] = useState([]);
@@ -33,7 +33,7 @@ export const CareersSection2 = ({ heroId }) => {
               </div>
               <button className={styles.viewBtn}>
                 <span>VIEW DETAILS</span>
-                <div className={styles.arrowCircle}>↗</div>
+                <div className={styles.arrowCircle}><img src={commonArrow} alt="" /></div>
               </button>
             </div>
 

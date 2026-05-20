@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import styles from './BlogsSection1.module.css';
-
+import commonArrow from '../../../shared/icons/common_arrow.png'
 export const BlogsSection1 = () => {
   const [activeTab, setActiveTab] = useState('Design');
   const [blogs, setBlogs] = useState([]);
@@ -48,10 +48,10 @@ export const BlogsSection1 = () => {
               <p className={styles.mainDesc}>{featuredBlog.description}</p>
               <div className={styles.mainFooter}>
                 <div className={styles.readBtn}>
-                  <div className={styles.arrowBox}>↗</div>
+                  <div className={styles.arrowBox}><img src={commonArrow} alt="" /></div>
                   <span>READ FULL BLOG</span>
                 </div>
-                <span className={styles.pubDate}>Published Date <b>{featuredBlog.published_date}</b></span>
+                <span className={styles.pubDate}>Published Date <b>  {featuredBlog.published_date}</b></span>
               </div>
             </div>
           </div>
@@ -66,7 +66,7 @@ export const BlogsSection1 = () => {
               <h4 className={styles.cardTitle}>{blog.title}</h4>
               <p className={styles.cardDesc}>{blog.description}</p>
               <div className={styles.readBtn}>
-                <div className={styles.arrowBox}>↗</div>
+                <div className={styles.arrowBox}><img src={commonArrow} alt="" /></div>
                 <span>READ FULL BLOG</span>
               </div>
             </div>

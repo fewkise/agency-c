@@ -1,12 +1,12 @@
 import styles from './project-card.module.css';
-
+import commonArrow from '../../../icons/common_arrow.png'
 export const ProjectCard = ({ title, projects }) => {
   return (
     <div className={styles.projectsBox}>
       <div className={styles.projectsHeader}>
         <h4>{title} PROJECTS</h4>
         <button className={styles.viewAll}>
-          <div className={styles.arrowCircle}>↗</div>
+          <div className={styles.arrowCircle}><img src={commonArrow} alt="" /></div>
           <span>VIEW ALL</span>
         </button>
       </div>

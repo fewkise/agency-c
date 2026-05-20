@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import styles from './HomeSection2.module.css';
-
+import commonArrow from '../../../shared/icons/common_arrow.png'
 export const HomeSection2 = () => {
   const [reasons, setReasons] = useState([]);
 
@@ -26,7 +26,7 @@ export const HomeSection2 = () => {
                 <p>{item.description}</p>
               </div>
               <div className={styles.learnMore}>
-                <div className={styles.arrowCircle}>↗</div>
+                <div className={styles.arrowCircle}><img src={commonArrow} alt="" /></div>
                 <span>Learn More</span>
               </div>
             </div>

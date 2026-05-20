@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import styles from './CareersSection3.module.css';
-
+import downArrow from '../../../shared/icons/down_arrow.png'
 export const CareersSection3 = ({ heroId }) => {
   const [header, setHeader] = useState(null);
   const [steps, setSteps] = useState([]);
@@ -37,7 +37,7 @@ export const CareersSection3 = ({ heroId }) => {
             <div className={styles.stepFooter}>
               <p className={styles.description}>{step.description}</p>
               <button className={styles.knowMoreBtn}>
-                <div className={styles.arrowIcon}>↓</div>
+                <div className={styles.arrowIcon}><img src={downArrow} alt="" /></div>
                 <span>KNOW MORE</span>
               </button>
             </div>

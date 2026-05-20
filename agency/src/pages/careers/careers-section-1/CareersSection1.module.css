@@ -32,7 +32,7 @@
 .startBtn {
   display: inline-flex;
   align-items: center;
-  gap: 15px;
+  gap: 20px;
   margin-top: 40px;
   text-decoration: none;
   color: #c9795e;
@@ -43,7 +43,6 @@
 .arrowCircle {
   width: 50px;
   height: 50px;
-  border: 1px solid #c9795e;
   border-radius: 50%;
   display: flex;
   align-items: center;

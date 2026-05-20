@@ -95,6 +95,9 @@
   align-items: center;
   justify-content: center;
   color: #e58d71;
+  img {
+    scale: 70%;
+  }
 }
 
 .description {
@@ -112,13 +115,11 @@
 }
 
 .priceTag {
-  background: #0f0f0f;
-  border: 1px solid #1f1f1f;
   padding: 14px 28px;
   border-radius: 12px;
   font-weight: 600;
   font-size: 18px;
-  color: white;
+  color: #F9EFEC;
   letter-spacing: 0.5px;
   display: inline-block;
 }
@@ -141,5 +142,8 @@
   }
   .headerBox h2 {
     font-size: 22px;
+  }
+  .bookCall {
+    display: none;
   }
 }

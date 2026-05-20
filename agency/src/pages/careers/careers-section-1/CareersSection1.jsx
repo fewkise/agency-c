@@ -1,7 +1,8 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import styles from './CareersSection1.module.css';
-
+import arrow_icon from '../../../shared/icons/arrow_icon.png'
+import downArrow from '../../../shared/icons/down_arrow.png'
 export const CareersSection1 = ({ heroId }) => {
   const [data, setData] = useState(null);
 
@@ -26,7 +27,7 @@ export const CareersSection1 = ({ heroId }) => {
               <span className={styles.subTitle}>{data.title_sub}</span>
             </h1>
             <Link to="/contact" className={styles.startBtn}>
-              <div className={styles.arrowCircle}>→</div>
+              <div className={styles.arrowCircle}><img src={arrow_icon} alt="" /></div>
               <span>START A PROJECT</span>
             </Link>
           </div>
@@ -43,7 +44,7 @@ export const CareersSection1 = ({ heroId }) => {
           </div>
           <div className={styles.scrollWrapper}>
             <button className={styles.scrollBtn} onClick={() => window.scrollTo({top: 800, behavior: 'smooth'})}>
-              <div className={styles.downArrow}>↓</div>
+              <div className={styles.downArrow}><img src={downArrow} alt="" /></div>
               <span>KNOW MORE</span>
             </button>
           </div>

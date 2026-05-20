@@ -1,7 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import styles from './footer.module.css';
-
+import commonArrow from '../../../icons/common_arrow.png'
+import twitter from '../../../icons/twitter.png'
+import behance from '../../../icons/behance.png'
+import instagram from '../../../icons/instagram.png'
+import dribble from '../../../icons/dribble.png'
 export const Footer = () => {
   return (
     <footer className={styles.footer}>
@@ -13,7 +17,7 @@ export const Footer = () => {
             Our team of experts is eager to craft tailored solutions that drive growth for your business.
           </p>
         </div>
-        <Link to="/contact" className={styles.ctaBtn}>GET IN TOUCH ↗</Link>
+        <Link to="/contact" className={styles.ctaBtn}>GET IN TOUCH <img src={commonArrow} alt="" /></Link>
       </div>
 
       <div className={styles.ticker}>
@@ -24,8 +28,8 @@ export const Footer = () => {
         <div className={styles.socialGrid}>
           <a href="https://instagram.com" target="_blank" rel="noreferrer" className={styles.socialCard}>
             <div className={styles.cardHeader}>
-              <div className={styles.iconBox}>IG</div>
-              <div className={styles.arrowCircle}>↗</div>
+              <div className={styles.iconBox}><img src={instagram} alt="" /></div>
+              <div className={styles.arrowCircle}><img src={commonArrow} alt="" /></div>
             </div>
             <div className={styles.cardBody}>
               <h4>INSTAGRAM</h4>
@@ -34,8 +38,8 @@ export const Footer = () => {
           </a>
           <a href="https://twitter.com" target="_blank" rel="noreferrer" className={styles.socialCard}>
             <div className={styles.cardHeader}>
-              <div className={styles.iconBox}>TW</div>
-              <div className={styles.arrowCircle}>↗</div>
+              <div className={styles.iconBox}><img src={twitter} alt="" /></div>
+              <div className={styles.arrowCircle}><img src={commonArrow} alt="" /></div>
             </div>
             <div className={styles.cardBody}>
               <h4>TWITTER</h4>
@@ -44,8 +48,8 @@ export const Footer = () => {
           </a>
           <a href="https://dribbble.com" target="_blank" rel="noreferrer" className={styles.socialCard}>
             <div className={styles.cardHeader}>
-              <div className={styles.iconBox}>DR</div>
-              <div className={styles.arrowCircle}>↗</div>
+              <div className={styles.iconBox}><img src={dribble} alt="" /></div>
+              <div className={styles.arrowCircle}><img src={commonArrow} alt="" /></div>
             </div>
             <div className={styles.cardBody}>
               <h4>DRIBBBLE</h4>
@@ -54,8 +58,8 @@ export const Footer = () => {
           </a>
           <a href="https://behance.net" target="_blank" rel="noreferrer" className={styles.socialCard}>
             <div className={styles.cardHeader}>
-              <div className={styles.iconBox}>BE</div>
-              <div className={styles.arrowCircle}>↗</div>
+              <div className={styles.iconBox}><img src={behance} alt="" /></div>
+              <div className={styles.arrowCircle}><img src={commonArrow} alt="" /></div>
             </div>
             <div className={styles.cardBody}>
               <h4>BEHANCE</h4>
@@ -101,7 +105,7 @@ export const Footer = () => {
               <h3>SUBSCRIBE TO OUR NEWSLETTER</h3>
               <div className={styles.inputGroup}>
                 <input type="email" placeholder="Enter your email" />
-                <button className={styles.sendBtn}>↗</button>
+                <button className={styles.sendBtn}><img src={commonArrow} alt="" /></button>
               </div>
             </div>
           </div>
