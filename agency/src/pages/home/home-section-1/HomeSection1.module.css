@@ -6,11 +6,11 @@ body {
   margin: 0;
   font-family: 'Roboto Flex', sans-serif;
   background-color: #0a0a0a; 
-
   color: white;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
 * {
   margin: 0;
   padding: 0;
@@ -21,6 +21,7 @@ body {
   background-color: #0a0a0a;
   color: white;
 }
+
 .wrapper {
   padding: 20px;
   margin: 0 auto;
@@ -47,10 +48,10 @@ body {
   padding: 60px;
 }
 
-.titleRow {
+.titleContainer {
   display: flex;
-  align-items: center;
-  gap: 20px;
+  flex-direction: column;
+  align-items: flex-start;
 }
 
 .leftCard h1 {
@@ -61,7 +62,7 @@ body {
 }
 
 .subTitle {
-  margin-bottom: 30px !important;
+  margin-bottom: 0 !important;
 }
 
 .startBtn {
@@ -72,6 +73,8 @@ body {
   padding: 10px 20px;
   border-radius: 50px;
   cursor: pointer;
+  margin-top: 20px;
+  margin-bottom: 30px;
 }
 
 .arrowIcon {
@@ -91,7 +94,6 @@ body {
   font-size: 14px;
 }
 
-/* --- FIX MARQUEE (БЕГУЩАЯ СТРОКА) --- */
 .marquee {
   background: #1a1a1a;
   padding: 20px 0;
@@ -135,7 +137,6 @@ body {
   animation-play-state: paused;
 }
 
-/* --- RIGHT CARD --- */
 .rightCard {
   background: #151515;
   border-radius: 24px;
@@ -170,9 +171,10 @@ body {
   color: black;
   font-size: 32px;
   border: 4px solid #151515;
-  img {
-    scale: 80%;
-  }
+}
+
+.projectArrow img {
+  scale: 80%;
 }
 
 .projectInfo h3 {
@@ -185,7 +187,6 @@ body {
   font-size: 14px;
 }
 
-/* --- STATS GRID --- */
 .statsGrid {
   display: grid;
   grid-template-columns: repeat(6, 1fr);
@@ -236,14 +237,28 @@ body {
   color: black;
 }
 
-/* --- ADAPTIVE --- */
 @media (max-width: 1100px) {
   .heroGrid { grid-template-columns: 1fr; }
   .statsGrid { grid-template-columns: repeat(3, 1fr); }
   .leftCard h1 { font-size: 48px; }
 }
 
+@media (max-width: 768px) {
+  .startBtn {
+    padding: 0;
+  }
+}
+
 @media (max-width: 700px) {
   .statsGrid { grid-template-columns: 1fr 1fr; }
   .content { padding: 30px; }
+}
+
+@media (max-width: 480px) {
+  .leftCard h1 {
+    font-size: 32px;
+  }
+  .startBtn {
+    gap: 12px;
+  }
 }

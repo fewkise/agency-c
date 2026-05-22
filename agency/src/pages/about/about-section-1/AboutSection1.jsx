@@ -2,7 +2,8 @@ import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import styles from './AboutSection1.module.css';
 import arrow_icon from '../../../shared/icons/arrow_icon.png'
-export const AboutSection1 = ({ heroId }) => {
+
+export const AboutSection1 = ({ heroId, targetId = "next-section" }) => {
   const [heroData, setHeroData] = useState(null);
   const [stats, setStats] = useState([]);
 
@@ -17,6 +18,13 @@ export const AboutSection1 = ({ heroId }) => {
       .then(setStats)
       .catch(err => console.error(err));
   }, [heroId]);
+
+  const handleScroll = () => {
+    const element = document.getElementById('1');
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
 
   return (
     <section className={styles.wrapper}>
@@ -44,7 +52,7 @@ export const AboutSection1 = ({ heroId }) => {
             ))}
           </div>
           <div className={styles.knowMoreWrapper}>
-            <button className={styles.knowMoreBtn}>
+            <button className={styles.knowMoreBtn} onClick={handleScroll}>
               <div className={styles.downArrow}>↓</div>
               <span>KNOW MORE</span>
             </button>

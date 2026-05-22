@@ -21,6 +21,11 @@ export const Footer = () => {
       .catch(err => console.error(err));
   }, []);
 
+  const marqueeItems = [
+    "FOLLOW US ON SOCIAL MEDIA", "FOLLOW US ON SOCIAL MEDIA", "FOLLOW US ON SOCIAL MEDIA", 
+    "FOLLOW US ON SOCIAL MEDIA", "FOLLOW US ON SOCIAL MEDIA", "FOLLOW US ON SOCIAL MEDIA"
+  ];
+
   return (
     <footer className={styles.footer}>
       <div className={styles.ctaCard}>
@@ -34,7 +39,13 @@ export const Footer = () => {
       </div>
 
       <div className={styles.ticker}>
-         <span>{settings?.ticker_text || ''}</span>
+        <div className={styles.tickerTrack}>
+          {[...marqueeItems, ...marqueeItems, ...marqueeItems].map((item, i) => (
+            <span key={i} className={styles.tickerItem}>
+              {item} <span className={styles.dot}>•</span>
+            </span>
+          ))}
+        </div>
       </div>
 
       <div className={styles.mainGrid}>

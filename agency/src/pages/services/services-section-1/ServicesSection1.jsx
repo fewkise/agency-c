@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import styles from './ServicesSection1.module.css';
 import arrowIcon from '../../../shared/icons/arrow_icon.png'
+
 export const ServicesSection1 = ({ heroId }) => {
   const [data, setData] = useState(null);
 
@@ -22,14 +23,14 @@ export const ServicesSection1 = ({ heroId }) => {
       <div className={styles.heroGrid}>
         <div className={styles.leftCard}>
           <div className={styles.content}>
-            <div className={styles.titleRow}>
-              <h1>{data?.title_main}</h1>
+            <div className={styles.titleContainer}>
+              <h1 className={styles.mainTitle}>{data?.title_main}</h1>
+              <h1 className={styles.subTitle}>{data?.title_sub}</h1>
               <Link to="/contact" className={styles.startBtn}>
                 <div className={styles.arrowIcon}><img src={arrowIcon} alt="" /></div>
                 <span>START A PROJECT</span>
               </Link>
             </div>
-            <h1 className={styles.subTitle}>{data?.title_sub}</h1>
             <p className={styles.description}>
               {data?.description}
             </p>

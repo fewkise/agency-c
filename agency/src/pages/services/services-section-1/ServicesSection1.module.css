@@ -20,19 +20,26 @@
   overflow: hidden;
 }
 
-.titleRow {
+/* Новая обертка для управления структурой заголовков и кнопки */
+.titleContainer {
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
   gap: 20px;
-  margin-bottom: 5px;
 }
 
-.titleRow h1, .subTitle {
+.mainTitle, .subTitle {
   font-size: 58px;
   font-weight: 600;
   color: #fff;
   margin: 0;
   line-height: 1.1;
+}
+
+/* На десктопе заставляем вторую надпись переноситься на новую строку */
+.subTitle {
+  width: 100%;
+  order: 2;
 }
 
 .startBtn {
@@ -44,6 +51,7 @@
   border-radius: 50px;
   cursor: pointer;
   text-decoration: none;
+  order: 1; /* Кнопка идет сразу за главным h1 на десктопе */
 }
 
 .arrowIcon {
@@ -59,6 +67,9 @@
   flex-shrink: 0;
 }
 
+.arrowIcon img {
+  display: block;
+}
 
 .description {
   color: #666;
@@ -166,12 +177,16 @@
     grid-template-columns: 1fr; 
   }
   
-  .titleRow h1, .subTitle { 
+  .mainTitle, .subTitle { 
     font-size: 42px; 
   }
   
   .rightCard { 
     min-height: 450px; 
+  }
+    .startBtn { 
+    order: 3; 
+    margin-top: 15px;
   }
 }
 
@@ -187,7 +202,22 @@
     padding: 30px;
   }
 
-  .titleRow h1, .subTitle {
+  /* Перестраиваем контейнер в колонку, чтобы кнопка упала вниз */
+  .titleContainer {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .mainTitle { order: 1; width: 100%; }
+  .subTitle { order: 2; width: 100%; }
+  
+  .startBtn { 
+    order: 3; 
+    margin-top: 15px;
+  }
+
+  .mainTitle, .subTitle {
     font-size: 32px;
   }
 
@@ -197,7 +227,7 @@
   }
 
   .marquee {
-    margin: 40px -30px -30px -30px; /* Корректируем отрицательные отступы под новый паддинг */
+    margin: 40px -30px -30px -30px; 
     padding: 14px 0;
   }
 
@@ -206,9 +236,6 @@
   }
 }
 
-/* ==========================================================================
-   ЭКСТРЕМАЛЬНЫЙ АДАПТИВ ДЛЯ СМАРТФОНОВ (320px - 360px)
-   ========================================================================== */
 @media (max-width: 360px) {
   .wrapper {
     padding: 10px;
@@ -219,15 +246,8 @@
     border-radius: 16px;
   }
 
-  .titleRow {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 16px;
-    width: 100%;
-  }
-
-  .titleRow h1, .subTitle {
-    font-size: 26px; /* Оптимальный размер для узких экранов */
+  .mainTitle, .subTitle {
+    font-size: 26px; 
   }
 
   .startBtn {
@@ -243,7 +263,7 @@
   }
 
   .marquee {
-    margin: 30px -20px -20px -20px; /* Идеальное прилегание к краям на 320px */
+    margin: 30px -20px -20px -20px; 
   }
 
   .rightCard {
@@ -267,3 +287,7 @@
     padding: 10px;
   }
 }
+    .startBtn { 
+    order: 3; 
+    margin-top: 15px;
+  }

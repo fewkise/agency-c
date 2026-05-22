@@ -14,7 +14,11 @@ export const AboutPage = () => {
       <AboutSection1 heroId={4}/>
       <AboutSection2 heroId={6}/>
       <AboutSection3 heroId={7}/>
-      <AboutSection4 heroId={8}/>
+      <div id='1'>
+<AboutSection4 heroId={8}/>
+      </div>
+      
+      
       <HomeSection5/>
       <HomeSection6/>
       <Footer/>

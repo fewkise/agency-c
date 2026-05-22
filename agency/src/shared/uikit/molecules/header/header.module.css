@@ -1,5 +1,3 @@
-
-
 .headerPositioner {
   width: 100%;
   padding: 10px 20px;
@@ -17,10 +15,9 @@
   padding: 15px 30px;
   border-radius: 20px; 
   border: 1px solid #1e1e1e; 
-
   width: 100%;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5); 
-
+  position: relative;
 }
 
 .logo {
@@ -29,9 +26,11 @@
   color: white;
   text-decoration: none;
   letter-spacing: 0.5px;
+  z-index: 1001;
+  img {
+    scale: 70%;
+  }
 }
-
-
 
 .navAndApi {
   display: flex;
@@ -44,30 +43,27 @@
   gap: 8px;
 }
 
-
-
 .nav a {
   color: #a0a0a0; 
-
   text-decoration: none;
   padding: 12px 18px; 
-
   border-radius: 12px; 
-
   font-size: 13px;
   font-weight: 600;
   transition: all 0.3s ease;
   background-color: transparent; 
-
+  border: 1px solid transparent;
 }
 
-
-
-.nav a:hover,
-.nav a.active {
+.nav a:hover {
   color: white !important;
   background-color: #1a1a1a; 
+}
 
+.nav a.active {
+  color: #f09376 !important;
+  background-color: #1a1a1a;
+  border: 1px solid rgba(240, 147, 118, 0.2);
 }
 
 .contactBtn {
@@ -84,17 +80,98 @@
 
 .contactBtn:hover {
   background-color: #ff8a65; 
-
 }
 
+.burgerBtn {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 24px;
+  height: 18px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  z-index: 1001;
+}
 
+.burgerBtn span {
+  width: 100%;
+  height: 2px;
+  background-color: white;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
 
 @media (max-width: 1100px) {
   .headerPositioner {
     padding: 15px 20px;
   }
-  
+
+  .burgerBtn {
+    display: flex;
+  }
+
+  .burgerActive span:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+
+  .burgerActive span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .burgerActive span:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+
+  .navAndApi {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 300px;
+    height: 100vh;
+    background-color: #121212;
+    border-left: 1px solid #1e1e1e;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 100px 40px;
+    gap: 40px;
+    transition: right 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    box-shadow: -10px 0 30px rgba(0, 0, 0, 0.7);
+  }
+
+  .menuOpen {
+    right: 0;
+    z-index: 1000;
+  }
+
   .nav {
-    display: none;
+    flex-direction: column;
+    width: 100%;
+    gap: 15px;
+  }
+
+  .nav a {
+    display: block;
+    width: 100%;
+    font-size: 16px;
+    padding: 14px 20px;
+  }
+
+  .nav a.active {
+    color: #f09376 !important;
+    background-color: #1a1a1a;
+    border-top: 1px solid transparent;
+    border-right: 1px solid transparent;
+    border-bottom: 1px solid transparent;
+    border-left: 3px solid #f09376;
+    border-radius: 0 12px 12px 0;
+  }
+
+  .contactBtn {
+    width: 100%;
+    text-align: center;
+    box-sizing: border-box;
   }
 }

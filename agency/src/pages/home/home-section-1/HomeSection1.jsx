@@ -3,6 +3,7 @@ import styles from './HomeSection1.module.css';
 import arrowIcon from '../../../shared/icons/arrow_icon.png'
 import bigArrowBtn from '../../../shared/icons/big_arrow_btn.png'
 import commonArrow from '../../../shared/icons/common_arrow.png'
+
 export const HomeSection1 = () => {
   const [stats, setStats] = useState([]);
   const [project, setProject] = useState(null);
@@ -29,14 +30,14 @@ export const HomeSection1 = () => {
       <div className={styles.heroGrid}>
         <div className={styles.leftCard}>
           <div className={styles.content}>
-            <div className={styles.titleRow}>
+            <div className={styles.titleContainer}>
               <h1>DIGITAL SOLUTIONS</h1>
+              <h1 className={styles.subTitle}>THAT DRIVE SUCCESS</h1>
               <div className={styles.startBtn}>
                 <div className={styles.arrowIcon}><img src={arrowIcon} alt="" /></div>
                 <span>START A PROJECT</span>
               </div>
             </div>
-            <h1 className={styles.subTitle}>THAT DRIVE SUCCESS</h1>
             <p className={styles.description}>
               At NexGen, we believe in the transformative power of digital solutions. 
               Our team of experts is dedicated to helping businesses like yours thrive 

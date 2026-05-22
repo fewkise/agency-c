@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import styles from './HomeSection2.module.css';
 import commonArrow from '../../../shared/icons/common_arrow.png'
+
 export const HomeSection2 = () => {
   const [reasons, setReasons] = useState([]);
 

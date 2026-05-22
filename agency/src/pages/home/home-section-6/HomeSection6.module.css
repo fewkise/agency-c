@@ -20,9 +20,14 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  gap: 15px;
 }
 
-.headerBox h2 { font-size: 24px; color: white; font-weight: 600; }
+.headerBox h2 { 
+  font-size: 24px; 
+  color: white; 
+  font-weight: 600; 
+}
 
 .viewAll {
   display: flex;
@@ -31,6 +36,7 @@
   color: #888;
   font-size: 13px;
   cursor: pointer;
+  flex-shrink: 0; /* Запрещаем сжиматься всему блоку ссылки */
 }
 
 .arrowSmall {
@@ -42,9 +48,11 @@
   align-items: center;
   justify-content: center;
   color: #e58d71;
-  img {
-    scale:70%;
-  }
+  flex-shrink: 0; /* КРИТИЧНО: Запрещает кружочку сжиматься на 320px */
+}
+
+.arrowSmall img {
+  scale: 70%;
 }
 
 .contentGrid {
@@ -53,9 +61,11 @@
   gap: 20px;
 }
 
-
-
-.faqList { display: flex; flex-direction: column; gap: 12px; }
+.faqList { 
+  display: flex; 
+  flex-direction: column; 
+  gap: 12px; 
+}
 
 .faqItem {
   background: #141414;
@@ -73,6 +83,11 @@
   color: white;
   font-size: 15px;
   font-weight: 500;
+  gap: 15px; /* Добавляем безопасный отступ между текстом и кнопкой плюса */
+}
+
+.faqHeader span {
+  word-break: break-word; /* Позволяет тексту корректно переноситься на мобильных */
 }
 
 .plusBtn {
@@ -87,6 +102,7 @@
   font-size: 20px;
   color: #666;
   transition: 0.3s;
+  flex-shrink: 0; /* КРИТИЧНО: Запрещает кружочку сжиматься на 320px */
 }
 
 .active .plusBtn {
@@ -100,7 +116,9 @@
   transition: grid-template-rows 0.4s ease-out;
 }
 
-.active .faqBody { grid-template-rows: 1fr; }
+.active .faqBody { 
+  grid-template-rows: 1fr; 
+}
 
 .faqAnswer {
   overflow: hidden;
@@ -117,8 +135,6 @@
   margin-top: 20px;
 }
 
-
-
 .askBox {
   background: #141414;
   border: 1px solid #1f1f1f;
@@ -126,7 +142,11 @@
   padding: 40px;
 }
 
-.askBox h3 { color: white; font-size: 18px; margin-bottom: 30px; }
+.askBox h3 { 
+  color: white; 
+  font-size: 18px; 
+  margin-bottom: 30px; 
+}
 
 .inputGroup {
   display: flex;
@@ -135,9 +155,14 @@
   margin-bottom: 20px;
 }
 
-.inputGroup label { color: white; font-size: 12px; font-weight: 600; }
+.inputGroup label { 
+  color: white; 
+  font-size: 12px; 
+  font-weight: 600; 
+}
 
-.inputGroup input, .inputGroup textarea {
+.inputGroup input, 
+.inputGroup textarea {
   background: #0f0f0f;
   border: 1px solid #1f1f1f;
   border-radius: 10px;
@@ -145,6 +170,8 @@
   color: white;
   font-family: inherit;
   font-size: 14px;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .sendBtn {
@@ -159,14 +186,45 @@
   margin-top: 10px;
 }
 
+.statusMessage {
+  margin-top: 15px;
+  font-size: 14px;
+  color: #e58d71;
+  text-align: center;
+}
+
+/* Адаптивные медиа-запросы */
 @media (max-width: 1024px) {
-  .contentGrid { grid-template-columns: 1fr; }
+  .contentGrid { 
+    grid-template-columns: 1fr; 
+  }
   .viewAll {
     display: none;
   }
 }
+
 @media (max-width: 500px) {
   .container {
     padding: 0;
+    background: transparent;
+    border: none;
+  }
+  .headerBox {
+    padding: 20px;
+  }
+  .faqItem {
+    padding: 16px;
+  }
+  .askBox {
+    padding: 24px;
+  }
+}
+
+@media (max-width: 360px) {
+  .headerBox h2 {
+    font-size: 18px;
+  }
+  .faqHeader {
+    font-size: 13px;
   }
 }

@@ -46,13 +46,47 @@
 }
 
 .ticker {
-  background: #111;
-  padding: 15px;
+  background: #1a1a1a;
+  padding: 20px 0;
   border-radius: 12px;
   margin-bottom: 20px;
-  color: #444;
-  font-size: 11px;
-  text-align: center;
+  overflow: hidden;
+  width: 100%;
+}
+
+.tickerTrack {
+  display: flex;
+  width: max-content;
+  align-items: center;
+  animation: scrollMarquee 25s linear infinite;
+}
+
+.tickerItem {
+  color: #666;
+  font-size: 14px;
+  letter-spacing: 1px;
+  white-space: nowrap;
+  display: inline-flex;
+  align-items: center;
+  padding: 0 20px;
+}
+
+.dot {
+  color: #ff8a65;
+  margin-left: 40px;
+}
+
+@keyframes scrollMarquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-33.333%);
+  }
+}
+
+.ticker:hover .tickerTrack {
+  animation-play-state: paused;
 }
 
 .mainGrid {
@@ -98,16 +132,18 @@
 .arrowCircle {
   width: 34px;
   height: 34px;
-  border: 1px solid #262626;
+  background: #e58d71 !important;
+  border: 1px solid #e58d71 !important;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #444;
+  flex-shrink: 0;
 }
 
 .arrowCircle img {
   transform: scale(70%);
+  filter: brightness(0) invert(1) !important;
 }
 
 .cardBody h4 { 
@@ -240,8 +276,6 @@
   margin-left: 20px; 
 }
 
-
-
 @media (max-width: 1024px) {
   .mainGrid { 
     grid-template-columns: 1fr; 
@@ -312,7 +346,6 @@
   }
 }
 
-
 @media (max-width: 600px) {
   .footer {
     padding: 16px;
@@ -332,7 +365,6 @@
     width: 100%;
   }
 
-
   .socialGrid { 
     grid-template-columns: 1fr 1fr; 
     gap: 12px;
@@ -351,7 +383,6 @@
     font-size: 16px;
   }
 }
-
 
 @media (max-width: 360px) {
   .footer {

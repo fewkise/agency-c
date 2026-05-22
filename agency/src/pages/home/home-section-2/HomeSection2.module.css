@@ -93,8 +93,6 @@
   border-color: #ff8a65;
 }
 
-
-
 @media (max-width: 1200px) {
   .grid {
     grid-template-columns: repeat(2, 1fr);
@@ -103,12 +101,45 @@
 
 @media (max-width: 768px) {
   .wrapper {
+    padding: 0 16px;
+  }
+  .container {
     padding: 20px;
+    border-radius: 16px;
+  }
+  .headerBox {
+    padding: 24px 16px;
+    margin-bottom: 16px;
+  }
+  .headerBox h2 {
+    font-size: 22px;
   }
   .grid {
     grid-template-columns: 1fr;
+    gap: 12px;
+  }
+  .card {
+    padding: 20px;
+  }
+  .cardContent p {
+    margin-bottom: 24px;
+  }
+}
+
+@media (max-width: 480px) {
+  .wrapper {
+    padding: 0 12px;
+  }
+  .container {
+    padding: 12px;
+  }
+  .headerBox {
+    padding: 16px 12px;
   }
   .headerBox h2 {
-    font-size: 24px;
+    font-size: 18px;
+  }
+  .card {
+    padding: 16px;
   }
 }
