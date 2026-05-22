@@ -1,71 +1,66 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import styles from './footer.module.css';
-import commonArrow from '../../../icons/common_arrow.png'
-import twitter from '../../../icons/twitter.png'
-import behance from '../../../icons/behance.png'
-import instagram from '../../../icons/instagram.png'
-import dribble from '../../../icons/dribble.png'
+import commonArrow from '../../../icons/common_arrow.png';
+
+const API_URL = 'http://localhost:5000/';
+
 export const Footer = () => {
+  const [settings, setSettings] = useState(null);
+  const [socials, setSocials] = useState([]);
+
+  useEffect(() => {
+    fetch(`${API_URL}api/footer-settings`)
+      .then(res => res.json())
+      .then(setSettings)
+      .catch(err => console.error(err));
+
+    fetch(`${API_URL}api/footer-socials`)
+      .then(res => res.json())
+      .then(setSocials)
+      .catch(err => console.error(err));
+  }, []);
+
   return (
     <footer className={styles.footer}>
       <div className={styles.ctaCard}>
         <div className={styles.ctaText}>
-          <h2>READY TO TRANSFORM YOUR DIGITAL PRESENCE?</h2>
-          <p>
-            Take the first step towards digital success with NexGen by your side. 
-            Our team of experts is eager to craft tailored solutions that drive growth for your business.
-          </p>
+          <h2>{settings?.cta_title || 'READY TO TRANSFORM YOUR DIGITAL PRESENCE?'}</h2>
+          <p>{settings?.cta_description || ''}</p>
         </div>
-        <Link to="/contact" className={styles.ctaBtn}>GET IN TOUCH <img src={commonArrow} alt="" /></Link>
+        <Link to="/contact" className={styles.ctaBtn}>
+          GET IN TOUCH <img src={commonArrow} alt="" />
+        </Link>
       </div>
 
       <div className={styles.ticker}>
-         <span>FOLLOW US ON SOCIAL MEDIA • FOLLOW US ON SOCIAL MEDIA • FOLLOW US ON SOCIAL MEDIA</span>
+         <span>{settings?.ticker_text || ''}</span>
       </div>
 
       <div className={styles.mainGrid}>
         <div className={styles.socialGrid}>
-          <a href="https://instagram.com" target="_blank" rel="noreferrer" className={styles.socialCard}>
-            <div className={styles.cardHeader}>
-              <div className={styles.iconBox}><img src={instagram} alt="" /></div>
-              <div className={styles.arrowCircle}><img src={commonArrow} alt="" /></div>
-            </div>
-            <div className={styles.cardBody}>
-              <h4>INSTAGRAM</h4>
-              <p>Share visually appealing snippets of our latest web projects.</p>
-            </div>
-          </a>
-          <a href="https://twitter.com" target="_blank" rel="noreferrer" className={styles.socialCard}>
-            <div className={styles.cardHeader}>
-              <div className={styles.iconBox}><img src={twitter} alt="" /></div>
-              <div className={styles.arrowCircle}><img src={commonArrow} alt="" /></div>
-            </div>
-            <div className={styles.cardBody}>
-              <h4>TWITTER</h4>
-              <p>Tweet about interesting coding challenges you've overcome.</p>
-            </div>
-          </a>
-          <a href="https://dribbble.com" target="_blank" rel="noreferrer" className={styles.socialCard}>
-            <div className={styles.cardHeader}>
-              <div className={styles.iconBox}><img src={dribble} alt="" /></div>
-              <div className={styles.arrowCircle}><img src={commonArrow} alt="" /></div>
-            </div>
-            <div className={styles.cardBody}>
-              <h4>DRIBBBLE</h4>
-              <p>Showcase design elements of our web projects.</p>
-            </div>
-          </a>
-          <a href="https://behance.net" target="_blank" rel="noreferrer" className={styles.socialCard}>
-            <div className={styles.cardHeader}>
-              <div className={styles.iconBox}><img src={behance} alt="" /></div>
-              <div className={styles.arrowCircle}><img src={commonArrow} alt="" /></div>
-            </div>
-            <div className={styles.cardBody}>
-              <h4>BEHANCE</h4>
-              <p>Create detailed presentations for our projects.</p>
-            </div>
-          </a>
+          {socials.map((item) => (
+            <a 
+              key={item.id} 
+              href={item.url} 
+              target="_blank" 
+              rel="noreferrer" 
+              className={styles.socialCard}
+            >
+              <div className={styles.cardHeader}>
+                <div className={styles.iconBox}>
+                  <img src={item.iconUrl} alt={item.name} />
+                </div>
+                <div className={styles.arrowCircle}>
+                  <img src={commonArrow} alt="" />
+                </div>
+              </div>
+              <div className={styles.cardBody}>
+                <h4>{item.name}</h4>
+                <p>{item.description}</p>
+              </div>
+            </a>
+          ))}
         </div>
 
         <div className={styles.navigationAndNewsletter}>
@@ -105,13 +100,15 @@ export const Footer = () => {
               <h3>SUBSCRIBE TO OUR NEWSLETTER</h3>
               <div className={styles.inputGroup}>
                 <input type="email" placeholder="Enter your email" />
-                <button className={styles.sendBtn}><img src={commonArrow} alt="" /></button>
+                <button className={styles.sendBtn}>
+                  <img src={commonArrow} alt="" />
+                </button>
               </div>
             </div>
           </div>
 
           <div className={styles.footerBottom}>
-            <p>© 2024 NexGen. All rights reserved.</p>
+            <p>{settings?.copyright_text || ''}</p>
             <div className={styles.legalLinks}>
               <Link to="/terms">Terms & Conditions</Link>
               <Link to="/privacy">Privacy Policy</Link>

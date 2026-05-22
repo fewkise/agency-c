@@ -274,6 +274,66 @@ app.get('/api/countries', async (req, res) => {
     res.status(500).send('Server Error');
   }
 });
+app.post('/api/user-questions', async (req, res) => {
+  const { name, email, question } = req.body;
+
+  if (!name || !email || !question) {
+    return res.status(400).json({ error: 'All fields are required' });
+  }
+
+  try {
+    const query = `
+      INSERT INTO user_questions (name, email, question) 
+      VALUES ($1, $2, $3) 
+      RETURNING *;
+    `;
+    const values = [name, email, question];
+    
+    const result = await pool.query(query, values); 
+    
+    res.status(201).json({ 
+      success: true, 
+      message: 'Question saved successfully', 
+      data: result.rows[0] 
+    });
+  } catch (error) {
+    console.error('Database insertion error:', error);
+    res.status(500).json({ error: 'Internal server error failed to save question' });
+  }
+});
+app.get('/api/footer-settings', async (req, res) => {
+  try {
+    const result = await pool.query('SELECT * FROM footer_settings LIMIT 1');
+    res.json(result.rows[0]);
+  } catch (err) {
+    console.error(err.message);
+    res.status(500).send('Server Error');
+  }
+});
+
+app.get('/api/footer-settings', async (req, res) => {
+  try {
+    const result = await pool.query('SELECT * FROM footer_settings LIMIT 1');
+    res.json(result.rows[0]);
+  } catch (err) {
+    console.error(err.message);
+    res.status(500).send('Server Error');
+  }
+});
+
+app.get('/api/footer-socials', async (req, res) => {
+  try {
+    const result = await pool.query('SELECT * FROM footer_socials ORDER BY id ASC');
+    const socials = result.rows.map(item => ({
+      ...item,
+      iconUrl: `http://localhost:5000/${item.icon_path}`
+    }));
+    res.json(socials);
+  } catch (err) {
+    console.error(err.message);
+    res.status(500).send('Server Error');
+  }
+});
 app.get('/', (req, res) => res.send('API is running...'));
 
 app.listen(PORT, () => console.log(`Server started on port ${PORT}`));

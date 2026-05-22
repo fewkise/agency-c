@@ -1,18 +1,26 @@
 import { useState, useEffect } from 'react';
 import styles from './HomeSection6.module.css';
-import commonArrow from '../../../shared/icons/common_arrow.png'
+import commonArrow from '../../../shared/icons/common_arrow.png';
+
 const API_URL = 'http://localhost:5000/';
 
 export const HomeSection6 = () => {
   const [faqs, setFaqs] = useState([]);
   const [openIds, setOpenIds] = useState([]);
 
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    question: ''
+  });
+  const [statusMessage, setStatusMessage] = useState('');
+
   useEffect(() => {
     fetch(`${API_URL}api/faqs`)
       .then(res => res.json())
       .then(data => {
         setFaqs(data);
-        if (data.length > 0) setOpenIds([data[0].id]); // Открываем первый по умолчанию
+        if (data.length > 0) setOpenIds([data[0].id]);
       })
       .catch(err => console.error(err));
   }, []);
@@ -21,6 +29,40 @@ export const HomeSection6 = () => {
     setOpenIds(prev => 
       prev.includes(id) ? prev.filter(item => item !== id) : [...prev, id]
     );
+  };
+
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({ ...prev, [name]: value }));
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    
+    if (!formData.name || !formData.email || !formData.question) {
+      setStatusMessage('Please fill in all fields.');
+      return;
+    }
+
+    try {
+      const response = await fetch(`${API_URL}api/user-questions`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (response.ok) {
+        setStatusMessage('Your question has been sent successfully!');
+        setFormData({ name: '', email: '', question: '' }); // Очистка формы
+      } else {
+        setStatusMessage('Something went wrong. Please try again.');
+      }
+    } catch (error) {
+      console.error('Error sending question:', error);
+      setStatusMessage('Server error. Please try again later.');
+    }
   };
 
   return (
@@ -35,8 +77,6 @@ export const HomeSection6 = () => {
         </div>
 
         <div className={styles.contentGrid}>
-          {
-}
           <div className={styles.faqList}>
             {faqs.map((faq) => {
               const isOpen = openIds.includes(faq.id);
@@ -58,24 +98,44 @@ export const HomeSection6 = () => {
             })}
           </div>
 
-          {
-}
           <div className={styles.askBox}>
             <h3>ASK YOUR QUESTION</h3>
-            <form className={styles.form} onSubmit={(e) => e.preventDefault()}>
+            <form className={styles.form} onSubmit={handleSubmit}>
               <div className={styles.inputGroup}>
                 <label>NAME</label>
-                <input type="text" placeholder="Enter your name" />
+                <input 
+                  type="text" 
+                  name="name"
+                  value={formData.name}
+                  onChange={handleInputChange}
+                  placeholder="Enter your name" 
+                  required
+                />
               </div>
               <div className={styles.inputGroup}>
                 <label>EMAIL</label>
-                <input type="email" placeholder="Enter your email" />
+                <input 
+                  type="email" 
+                  name="email"
+                  value={formData.email}
+                  onChange={handleInputChange}
+                  placeholder="Enter your email" 
+                  required
+                />
               </div>
               <div className={styles.inputGroup}>
                 <label>YOUR QUESTION</label>
-                <textarea placeholder="Enter Your Question Here ....." rows="5"></textarea>
+                <textarea 
+                  name="question"
+                  value={formData.question}
+                  onChange={handleInputChange}
+                  placeholder="Enter Your Question Here ....." 
+                  rows="5"
+                  required
+                ></textarea>
               </div>
               <button type="submit" className={styles.sendBtn}>SEND YOUR MESSAGE</button>
+              {statusMessage && <p className={styles.statusMessage}>{statusMessage}</p>}
             </form>
           </div>
         </div>
