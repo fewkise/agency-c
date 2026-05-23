@@ -17,8 +17,7 @@ const BlogDetailSection1 = () => {
 
   return (
     <div className={styles.pageWrapper}>
-      {
-}
+      
       <header className={styles.heroSection}>
         <div className={styles.titleCard}>
           <h1>{blog.title}</h1>
@@ -41,15 +40,13 @@ const BlogDetailSection1 = () => {
 
       <main className={styles.contentGrid}>
         <aside className={styles.leftSidebar}>
-          <a href={blog.twitter_url} target="_blank" rel="noreferrer" className={styles.socialIcon}>𝕏</a>
-          <a href={blog.facebook_url} target="_blank" rel="noreferrer" className={styles.socialIcon}>f</a>
-          <a href={blog.linkedin_url} target="_blank" rel="noreferrer" className={styles.socialIcon}>in</a>
+          <a href="https://x.com" target="_blank" rel="noreferrer noopener" className={styles.socialIcon}>𝕏</a>
+          <a href="https://facebook.com" target="_blank" rel="noreferrer noopener" className={styles.socialIcon}>f</a>
+          <a href="https://linkedin.com" target="_blank" rel="noreferrer noopener" className={styles.socialIcon}>in</a>
         </aside>
 
         <article className={styles.articleContent}>
-          <h2 className={styles.contentTitle}>THE ESSENCE OF {blog.category.toUpperCase()}</h2>
-          {
-}
+          <h2 className={styles.contentTitle}>THE ESSENCE OF {blog.category?.toUpperCase()}</h2>
           <p className={styles.fullText}>{blog.full_content}</p>
         </article>
 
@@ -63,7 +60,13 @@ const BlogDetailSection1 = () => {
               </div>
             </div>
             <p>Crafting visual narratives that captivate and inspire, weaving creativity into every chapter.</p>
-            <button className={styles.twitterBtn}>@wadewarren ↗</button>
+            
+            <button 
+              className={styles.twitterBtn}
+              onClick={() => window.open('https://x.com', '_blank', 'noopener,noreferrer')}
+            >
+              @wadewarren ↗
+            </button>
           </div>
           <div className={styles.statsBox}>
              <div className={styles.statLine}>❤️ LIKED BY <span>2.6K USERS</span></div>

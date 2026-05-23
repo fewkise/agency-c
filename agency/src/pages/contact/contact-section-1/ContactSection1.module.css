@@ -22,19 +22,19 @@
   flex-direction: column;
   justify-content: space-between;
   min-width: 0; 
-
   overflow: hidden; 
-
 }
 
-.titleRow {
+.titleContainer {
   display: flex;
-  justify-content: space-between;
   align-items: flex-start;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 20px;
   margin-bottom: 30px;
 }
 
-.mainTitle {
+.mainTitle, .subTitle {
   color: #fff;
   font-size: clamp(32px, 4vw, 56px);
   font-weight: 500;
@@ -43,7 +43,14 @@
   text-transform: uppercase;
 }
 
-.subTitle { color: #fff; }
+.subTitle {
+  width: 100%;
+  order: 2;
+}
+
+.mainTitle {
+  order: 1;
+}
 
 .startBtn {
   display: flex;
@@ -53,6 +60,7 @@
   color: #c9795e;
   font-size: 14px;
   white-space: nowrap;
+  order: 3;
 }
 
 .arrowCircle {
@@ -73,17 +81,14 @@
   max-width: 600px;
 }
 
-
-
 .marqueeContainer {
   background: #0f0f0f;
-  border: 1px solid #1f1f1f;
+  border-top: 1px solid #1f1f1f;
+  border-bottom: 1px solid #1f1f1f;
   padding: 18px 0;
-  border-radius: 12px;
-  overflow: hidden; 
-
-  margin-top: 40px;
-  width: 100%;
+  margin: 40px -60px -60px -60px;
+  width: auto;
+  overflow: hidden;
   position: relative;
 }
 
@@ -91,26 +96,26 @@
   display: flex;
   width: max-content;
   animation: scroll 30s linear infinite; 
-
 }
 
 .marqueeItem {
   color: #444;
-  font-size: 12px;
+  font-size: 13px;
   letter-spacing: 1px;
-  padding: 0 15px;
   white-space: nowrap;
+  display: inline-flex;
+  align-items: center;
 }
 
-.dot { color: #c9795e; margin-left: 10px; }
+.dot { 
+  color: #c9795e; 
+  margin: 0 30px; 
+}
 
 @keyframes scroll {
   0% { transform: translateX(0); }
   100% { transform: translateX(-33.33%); } 
-
 }
-
-
 
 .rightCard {
   background: #141414;
@@ -173,6 +178,60 @@
 }
 
 @media (max-width: 1024px) {
-  .container { grid-template-columns: 1fr; }
-  .leftCard { padding: 30px; }
+  .container { 
+    grid-template-columns: 1fr; 
+  }
+  .leftCard { 
+    padding: 40px; 
+  }
+  .marqueeContainer {
+    margin: 40px -40px -40px -40px;
+  }
+  .startBtn {
+    margin-top: 10px;
+  }
+}
+
+@media (max-width: 600px) {
+  .wrapper {
+    padding: 20px;
+  }
+  .leftCard {
+    padding: 30px;
+  }
+  .titleContainer {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+  .mainTitle { order: 1; width: 100%; }
+  .subTitle { order: 2; width: 100%; }
+  .startBtn { 
+    order: 3; 
+    margin-top: 15px;
+  }
+  .marqueeContainer {
+    margin: 40px -30px -30px -30px;
+    padding: 14px 0;
+  }
+  .statsGrid {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+  }
+  .reachUsBox {
+    padding: 20px;
+  }
+}
+
+@media (max-width: 380px) {
+  .leftCard {
+    padding: 20px;
+  }
+  .marqueeContainer {
+    margin: 30px -20px -20px -20px;
+  }
+  .startBtn {
+    width: 100%;
+    justify-content: center;
+  }
 }

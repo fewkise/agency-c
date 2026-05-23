@@ -334,6 +334,28 @@ app.get('/api/footer-socials', async (req, res) => {
     res.status(500).send('Server Error');
   }
 });
+app.post('/api/contact', async (req, res) => {
+  try {
+    const { firstName, lastName, email, countryCode, phone, message } = req.body;
+
+    if (!firstName || !lastName || !email || !phone || !message) {
+      return res.status(400).json({ error: 'All fields are required' });
+    }
+
+    const queryText = `
+      INSERT INTO messages (first_name, last_name, email, country_code, phone, message)
+      VALUES ($1, $2, $3, $4, $5, $6)
+      RETURNING *;
+    `;
+    const values = [firstName, lastName, email, countryCode, phone, message];
+    const result = await pool.query(queryText, values);
+
+    res.status(201).json({ success: true, data: result.rows[0] });
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ error: 'Internal Server Error' });
+  }
+});
 app.get('/', (req, res) => res.send('API is running...'));
 
 app.listen(PORT, () => console.log(`Server started on port ${PORT}`));

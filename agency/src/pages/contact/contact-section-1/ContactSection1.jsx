@@ -29,11 +29,9 @@ export const ContactSection1 = ({ heroId }) => {
         
         <div className={styles.leftCard}>
           <div className={styles.mainContent}>
-            <div className={styles.titleRow}>
-              <h1 className={styles.mainTitle}>
-                {heroData?.title_main} <br />
-                <span className={styles.subTitle}>{heroData?.title_sub}</span>
-              </h1>
+            <div className={styles.titleContainer}>
+              <h1 className={styles.mainTitle}>{heroData?.title_main}</h1>
+              <h1 className={styles.subTitle}>{heroData?.title_sub}</h1>
               <Link to="/contact" className={styles.startBtn}>
                 <div className={styles.arrowCircle}>→</div>
                 <span>START A PROJECT</span>
@@ -42,8 +40,6 @@ export const ContactSection1 = ({ heroId }) => {
             <p className={styles.description}>{heroData?.description}</p>
           </div>
 
-          {
-}
           <div className={styles.marqueeContainer}>
             <div className={styles.marqueeInner}>
               {[...marqueeItems, ...marqueeItems, ...marqueeItems].map((item, i) => (
