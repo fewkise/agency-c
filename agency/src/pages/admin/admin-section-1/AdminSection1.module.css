@@ -1,0 +1,325 @@
+.adminWrapper {
+  display: flex;
+  min-height: 100vh;
+  background: #070707;
+  color: #fff;
+  font-family: system-ui, -apple-system, sans-serif;
+}
+
+.sidebar {
+  width: 280px;
+  background: #0d0d0d;
+  border-right: 1px solid #1a1a1a;
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+}
+
+.logoBox {
+  padding: 30px 24px;
+  border-bottom: 1px solid #1a1a1a;
+}
+
+.logoBox h2 {
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  margin: 0;
+}
+
+.logoBox h2 span {
+  color: #c9795e;
+}
+
+.logoBox p {
+  font-size: 11px;
+  color: #555;
+  margin: 4px 0 0 0;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.menu {
+  padding: 20px 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.menuBtn {
+  background: transparent;
+  border: none;
+  color: #888;
+  padding: 12px 16px;
+  border-radius: 10px;
+  text-align: left;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.menuBtn:hover {
+  background: #141414;
+  color: #fff;
+}
+
+.activeMenu {
+  background: #c9795e;
+  color: #000;
+  font-weight: 600;
+}
+
+.activeMenu:hover {
+  background: #c9795e;
+  color: #000;
+}
+
+.mainContent {
+  flex-grow: 1;
+  padding: 40px 60px;
+  overflow-y: auto;
+}
+
+.contentHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 40px;
+  border-bottom: 1px solid #1a1a1a;
+  padding-bottom: 20px;
+}
+
+.contentHeader h1 {
+  font-size: 28px;
+  font-weight: 500;
+  margin: 0;
+}
+
+.badge {
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.success {
+  background: rgba(46, 204, 113, 0.15);
+  border: 1px solid #2ecc71;
+  color: #2ecc71;
+}
+
+.error {
+  background: rgba(231, 76, 60, 0.15);
+  border: 1px solid #e74c3c;
+  color: #e74c3c;
+}
+
+.gridList {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 20px;
+}
+
+.dataCard {
+  background: #111;
+  border: 1px solid #1f1f1f;
+  border-radius: 16px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.cardInfo h3 {
+  margin: 0 0 8px 0;
+  font-size: 16px;
+  color: #fff;
+  font-weight: 600;
+}
+
+.cardInfo p {
+  margin: 0;
+  font-size: 13px;
+  color: #666;
+  line-height: 1.5;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.editBtn {
+  background: #1a1a1a;
+  border: 1px solid #2d2d2d;
+  color: #ccc;
+  padding: 10px 14px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 13px;
+  transition: all 0.2s;
+}
+
+.editBtn:hover {
+  background: #fff;
+  color: #000;
+  border-color: #fff;
+}
+
+.editorForm {
+  background: #111;
+  border: 1px solid #1f1f1f;
+  border-radius: 20px;
+  padding: 40px;
+  max-width: 800px;
+}
+
+.formHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.formHeader h2 {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.cancelBtn {
+  background: transparent;
+  border: none;
+  color: #888;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.cancelBtn:hover {
+  color: #fff;
+}
+
+.inputsGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  margin-bottom: 30px;
+}
+
+.inputGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.inputGroup label {
+  font-size: 11px;
+  color: #555;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+.inputGroup input,
+.inputGroup textarea {
+  background: #080808;
+  border: 1px solid #222;
+  border-radius: 10px;
+  padding: 14px;
+  color: #fff;
+  font-size: 14px;
+  outline: none;
+}
+
+.inputGroup input:focus,
+.inputGroup textarea:focus {
+  border-color: #c9795e;
+}
+
+.inputGroup textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+.fileUploadArea {
+  position: relative;
+  border: 2px dashed #222;
+  border-radius: 10px;
+  padding: 20px;
+  text-align: center;
+  background: #080808;
+}
+
+.fileUploadArea input {
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 100%;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.fileLabel {
+  color: #888;
+  font-size: 13px;
+}
+
+.saveBtn {
+  background: #c9795e;
+  color: #000;
+  border: none;
+  padding: 16px 30px;
+  border-radius: 12px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  width: 100%;
+}
+
+.saveBtn:hover {
+  background: #e08b6f;
+}
+
+@media (max-width: 1024px) {
+  .adminWrapper {
+    flex-direction: column;
+  }
+  .sidebar {
+    width: 100%;
+    border-right: none;
+    border-bottom: 1px solid #1a1a1a;
+  }
+  .menu {
+    flex-direction: row;
+    overflow-x: auto;
+    padding-bottom: 15px;
+  }
+  .menuBtn {
+    white-space: nowrap;
+  }
+  .mainContent {
+    padding: 30px 20px;
+  }
+  .inputsGrid {
+    grid-template-columns: 1fr;
+  }
+}
+.headerActions {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.createBtn {
+  background: transparent;
+  border: 1px solid #c9795e;
+  color: #c9795e;
+  padding: 10px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.createBtn:hover {
+  background: #c9795e;
+  color: #000;
+}
